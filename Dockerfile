@@ -8,6 +8,7 @@ RUN cd /usr/local && \
 RUN gem install bundler --no-document
 
 RUN cd ~ && git clone https://github.com/rutan/zoint2.git
+RUN cd ~/zoint2 && git fetch && git checkout -f 419df4f99ddef529d2694c55af590a34f40101eb
 RUN cd ~/zoint2 && \
     . /usr/local/nvm/nvm.sh && npm install --unsafe-perm && \
     bundle install -j4
